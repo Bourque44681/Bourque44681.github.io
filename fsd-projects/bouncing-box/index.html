@@ -42,7 +42,7 @@
 
   <body class="board">
     <!-- HTML for the box -->
-    <div class="box"><h1 id = "hippos">f</h1></div>
+    <div class="box"><h1 id = "hippos">0</h1></div>
 
     <script>
       (function () {
@@ -115,16 +115,16 @@
           positionY += speedY;
           moveBoxTo(positionX, false);
           moveBoxTo(positionY, true);
-          if (positionX > boardWidth - 72){ //so it doesn't go in the wall
+          if (positionX > boardWidth - 75){ //so it doesn't go in the wall
             speedX = speedX * -1;
           }
-          else if (positionX < 12){
+          else if (positionX < 25){
             speedX = speedX * -1;
           }
-          else if (positionY < 25){
+          else if (positionY < 30){
             speedY = speedY * -1;
           }
-          else if (positionY > boardHeight + -60){
+          else if (positionY > boardHeight + -70){
             speedY = speedY * -1;
           }
           requestAnimationFrame(update);
@@ -142,7 +142,7 @@
           changeBoxText(points);
 
           speedX = 2 * points + 1;
-          speedY = 2 * points + 1;
+          speedY = 2 * points + .7;
 
           var up = Math.floor(Math.random()*2);
           var side = Math.floor(Math.random()*2);
